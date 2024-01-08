@@ -1,5 +1,6 @@
 // Importation des modules nécessaires
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") require("dotenv").config();
+
 const http = require("http");
 const { mongoConnect } = require("./services/mongo");
 const app = require("./app");
