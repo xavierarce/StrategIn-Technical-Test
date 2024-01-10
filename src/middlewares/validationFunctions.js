@@ -1,7 +1,7 @@
-const validator = require("validator");
+import validator from "validator"
 
 // Validation du format de l'email avec une expression régulière
-const validateEmail = (email) => {
+export const validateEmail = (email) => {
   if (!email) throw new Error("Email Required");
   if (typeof email !== "string") throw new Error("Invalid Email");
 
@@ -17,12 +17,12 @@ const validateEmail = (email) => {
   }
 };
 
-const validateUsername = (username) => {
+export const validateUsername = (username) => {
   if (!username) throw new Error("Username Required");
   if (typeof username !== "string") throw new Error("Invalid Username");
 };
 
-const validatePassword = (password) => {
+export const validatePassword = (password) => {
   if (!password) throw new Error("Password Required");
   if (typeof password !== "string") throw new Error("Invalid Password");
 
@@ -37,8 +37,3 @@ const validatePassword = (password) => {
   }
 };
 
-module.exports = {
-  validateEmail,
-  validateUsername,
-  validatePassword,
-};

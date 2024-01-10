@@ -1,6 +1,6 @@
-const bcrypt = require("bcrypt");
-const User = require("../models/User.model");
-const jwt = require("jsonwebtoken");
+import bcrypt from "bcrypt";
+import User from "../models/User.model.js";
+import jwt from "jsonwebtoken";
 
 // Contrôleur pour la connexion d'un utilisateur
 const loginUser = async (req, res) => {
@@ -28,7 +28,7 @@ const loginUser = async (req, res) => {
       // Retourne une réponse réussie avec le token d'authentification
       return res
         .status(200)
-        .json({ status: "success", userInfo,accessToken: accessToken,  });
+        .json({ status: "success", userInfo, accessToken: accessToken });
     }
     // En cas de mot de passe incorrect
     return res.json({ status: "error", error: "Incorrect Credential" });
@@ -39,4 +39,4 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { loginUser };
+export default loginUser;
